@@ -52,7 +52,6 @@ class CalenderArrange{
             times = 7;
         }
 
-
         String nullValue = " ";
         String nullValue2 ="   ";
         String value;
@@ -89,7 +88,6 @@ class CalenderArrange{
                             value = Integer.toString(counter);
                             CalenderArray[i][j] = value + nullValue;
                         }
-
                     }
                 }
 
@@ -131,13 +129,9 @@ class CalenderArrange{
                         }
                     }
                 }
-
-
-
-
             }
-
         }
+        
         System.out.println(" ");
         System.out.println("        "+Month+"        ");
         System.out.println("____________________");
@@ -217,9 +211,5 @@ public class Calender {
             System.out.println("Invalid Month or invalid format");
             System.out.println("Write month in MMM format");
         }
-
-
-
-
     }
 }
