@@ -13,7 +13,7 @@ class CalenderArrange{
         int i,j,start = 0;
         SimpleDateFormat format1=new SimpleDateFormat("dd/MMM/yyyy");
         String BackSlash ="/";
-        String Date = "1"+BackSlash+Month+BackSlash+Year;
+        String Date = "1"+BackSlash+Month+BackSlash+Year; // Get First date in format of "1/Jan/2021"
         Date FinalDate= null;
         try {
             FinalDate = format1.parse(Date);
@@ -22,10 +22,12 @@ class CalenderArrange{
         }
         DateFormat format2=new SimpleDateFormat("EEE");
         String finalDay=format2.format(FinalDate);
+        //Get day at the 1st day of the month
 
         String [][]CalenderArray = new String[6][7];
         int times = 0;
 
+        //Make a integer to provide it a number so that it will help the loop start from that point
         if(finalDay.equals("Sun")){
             times = 1;
         }
@@ -65,11 +67,14 @@ class CalenderArrange{
                 CalenderArray[i][j] = nullValue2;
             }
         }
-
+        // The array's each index filled with 3 spaces
+        // because each number of the calender has 2 number and 1 space
+        
+        
         //Calender value
         for (i=0; i<6; i++){
             if(i==0){
-                start = times-1;
+                start = times-1; // Minus 1 from the time because array starts from 0 index
             }
             else{
                 start =0;
