@@ -6,14 +6,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-class CalenderArrange{
+class CalenderCreation{
 
 
     public void GetDay(String Month,String Year){
         int i,j,start = 0;
         SimpleDateFormat format1=new SimpleDateFormat("dd/MMM/yyyy");
         String BackSlash ="/";
-        String Date = "1"+BackSlash+Month+BackSlash+Year; // Get First date in format of "1/Jan/2021"
+        String Date = "1"+BackSlash+Month+BackSlash+Year;
         Date FinalDate= null;
         try {
             FinalDate = format1.parse(Date);
@@ -22,12 +22,10 @@ class CalenderArrange{
         }
         DateFormat format2=new SimpleDateFormat("EEE");
         String finalDay=format2.format(FinalDate);
-        //Get day at the 1st day of the month
 
         String [][]CalenderArray = new String[6][7];
         int times = 0;
 
-        //Make a integer to provide it a number so that it will help the loop start from that point
         if(finalDay.equals("Sun")){
             times = 1;
         }
@@ -54,6 +52,7 @@ class CalenderArrange{
             times = 7;
         }
 
+
         String nullValue = " ";
         String nullValue2 ="   ";
         String value;
@@ -67,14 +66,11 @@ class CalenderArrange{
                 CalenderArray[i][j] = nullValue2;
             }
         }
-        // The array's each index filled with 3 spaces
-        // because each number of the calender has 2 number and 1 space
-        
-        
+
         //Calender value
         for (i=0; i<6; i++){
             if(i==0){
-                start = times-1; // Minus 1 from the time because array starts from 0 index
+                start = times-1;
             }
             else{
                 start =0;
@@ -93,6 +89,7 @@ class CalenderArrange{
                             value = Integer.toString(counter);
                             CalenderArray[i][j] = value + nullValue;
                         }
+
                     }
                 }
 
@@ -134,17 +131,23 @@ class CalenderArrange{
                         }
                     }
                 }
+
+
+
+
             }
+
         }
-        
         System.out.println(" ");
         System.out.println("        "+Month+"        ");
-        System.out.println("____________________");
+        System.out.println("________");
         System.out.println(" S  M  T  W  T  F  S");
+
         for (i=0; i<6; i++){
             for (j=0; j<7; j++){
                 System.out.print(CalenderArray[i][j]);
             }
+
             System.out.println("");
         }
     }
@@ -153,7 +156,7 @@ class CalenderArrange{
 public class Calender {
 
     public static void main(String[] args) {
-        CalenderArrange q = new CalenderArrange();
+        CalenderCreation q = new CalenderCreation();
 
         Scanner obj = new Scanner(System.in);
         String Given_Month;
@@ -217,4 +220,6 @@ public class Calender {
             System.out.println("Write month in MMM format");
         }
     }
+
+
 }
